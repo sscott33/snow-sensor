@@ -44,7 +44,7 @@ ICAgICBwcmludCgiU2Vuc29yIEhlYXRlciBzdGF0dXMgPSIsIHNlbnNvci5oZWF0ZXIpCg==
 EOF
 chmod +x test_sht31.py
 
-base64 -di > test_amg33xx.py <<'EOF'
+base64 -di > test_amg88xx.py <<'EOF'
 IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoKaW1wb3J0IHRpbWUKaW1wb3J0IGJ1c2lvCmltcG9ydCBi
 b2FyZAppbXBvcnQgYWRhZnJ1aXRfYW1nODh4eAoKaTJjID0gYnVzaW8uSTJDKGJvYXJkLlNDTCwg
 Ym9hcmQuU0RBKQphbWcgPSBhZGFmcnVpdF9hbWc4OHh4LkFNRzg4WFgoaTJjKQoKd2hpbGUgVHJ1
