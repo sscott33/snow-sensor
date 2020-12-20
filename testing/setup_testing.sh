@@ -1,16 +1,21 @@
 #!/bin/bash
 
+echo '#### NOTICE ###########################################################'
 echo This script will install the necessary software to test the wiring of
 echo the I2C sensors. Test scripts will be written to the
-echo '/home/pi/testing' directory.
-sleep 12
+echo \'/home/pi/testing\' directory. Please note that this testing suite makes
+echo use of free licensed open source software. Please see the licensing
+echo file \'amg88_and_sht31_prog_license.txt\' for details. This license
+echo pertains to both \'test_amg33xx.py\' and \'test_sht31.py\'.
+echo '#######################################################################'
+sleep 20
 
-echo '#### Updating your installation ############################'
+echo '#### Updating your installation #######################################'
 echo
 sudo apt update -y && sudo apt upgrade -y
 echo
 
-echo '#### Installing software for I2C ###########################'
+echo '#### Installing software for I2C ######################################'
 echo
 sudo apt install -y python3-pip i2c-tools
 echo
@@ -18,7 +23,7 @@ echo
 sudo pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
 echo
 
-echo '#### Writing the test scripts ##############################'
+echo '#### Writing the test scripts and license file ########################'
 echo
 mkdir /home/pi/testing
 cd /home/pi/testing
@@ -48,6 +53,28 @@ cm1hdCh0ZW1wKSBmb3IgdGVtcCBpbiByb3ddKQogICAgICAgIHByaW50KCIiKQoKICAgIHByaW50
 KCJcbiIpCiAgICB0aW1lLnNsZWVwKDEpCg==
 EOF
 chmod +x test_amg33xx.py
+
+base64 -di > amg88_and_sht31_prog_license.txt <<'EOF'
+VGhlIE1JVCBMaWNlbnNlIChNSVQpCgpDb3B5cmlnaHQgKGMpIDIwMTcgSmVycnkgTmVlZGVsbAoK
+UGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJz
+b24gb2J0YWluaW5nIGEgY29weQpvZiB0aGlzIHNvZnR3YXJlIGFuZCBhc3NvY2lhdGVkIGRvY3Vt
+ZW50YXRpb24gZmlsZXMgKHRoZSAiU29mdHdhcmUiKSwgdG8gZGVhbAppbiB0aGUgU29mdHdhcmUg
+d2l0aG91dCByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0aGUgcmln
+aHRzCnRvIHVzZSwgY29weSwgbW9kaWZ5LCBtZXJnZSwgcHVibGlzaCwgZGlzdHJpYnV0ZSwgc3Vi
+bGljZW5zZSwgYW5kL29yIHNlbGwKY29waWVzIG9mIHRoZSBTb2Z0d2FyZSwgYW5kIHRvIHBlcm1p
+dCBwZXJzb25zIHRvIHdob20gdGhlIFNvZnR3YXJlIGlzCmZ1cm5pc2hlZCB0byBkbyBzbywgc3Vi
+amVjdCB0byB0aGUgZm9sbG93aW5nIGNvbmRpdGlvbnM6CgpUaGUgYWJvdmUgY29weXJpZ2h0IG5v
+dGljZSBhbmQgdGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZSBpbmNsdWRlZCBpbiBhbGwK
+Y29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9mIHRoZSBTb2Z0d2FyZS4KClRIRSBTT0ZU
+V0FSRSBJUyBQUk9WSURFRCAiQVMgSVMiLCBXSVRIT1VUIFdBUlJBTlRZIE9GIEFOWSBLSU5ELCBF
+WFBSRVNTIE9SCklNUExJRUQsIElOQ0xVRElORyBCVVQgTk9UIExJTUlURUQgVE8gVEhFIFdBUlJB
+TlRJRVMgT0YgTUVSQ0hBTlRBQklMSVRZLApGSVRORVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9T
+RSBBTkQgTk9OSU5GUklOR0VNRU5ULiBJTiBOTyBFVkVOVCBTSEFMTCBUSEUKQVVUSE9SUyBPUiBD
+T1BZUklHSFQgSE9MREVSUyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUyBPUiBPVEhF
+UgpMSUFCSUxJVFksIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENPTlRSQUNULCBUT1JUIE9SIE9U
+SEVSV0lTRSwgQVJJU0lORyBGUk9NLApPVVQgT0YgT1IgSU4gQ09OTkVDVElPTiBXSVRIIFRIRSBT
+T0ZUV0FSRSBPUiBUSEUgVVNFIE9SIE9USEVSIERFQUxJTkdTIElOIFRIRQpTT0ZUV0FSRS4K
+EOF
 
 echo
 echo Please enable I2C by running raspi-config and then reboot.
