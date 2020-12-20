@@ -13,6 +13,7 @@ for component in testing_suite_component_*; do
     cat $component
 done >> $deploy_file
 
+# add the testing scripts and licenses to be written to testing directory
 echo >> $deploy_file
 echo '####' testing scripts and licenses '####' >> $deploy_file
 while IFS="" read -r line
