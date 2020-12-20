@@ -2,3 +2,4 @@ test_amg88xx.py
 test_amg88xx_license.txt
 test_sht31.py
 test_sht31_license.txt
+test_raspi_camera.sh

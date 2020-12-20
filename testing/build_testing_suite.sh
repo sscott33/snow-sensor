@@ -26,5 +26,11 @@ do
 done < $deployment_file_list >> $deploy_file
 
 echo >> $deploy_file
-echo echo >> $deploy_file
-echo echo Please enable I2C by running raspi-config and then reboot. >> $deploy_file
+cat >> $deploy_file <<'EOF'
+#### making python and shell scripts executable ####
+chmod +x *.py *.sh
+
+#### remind the user to enable I2C and to reboot ####
+echo
+echo Please enable I2C by running raspi-config and then reboot.
+EOF

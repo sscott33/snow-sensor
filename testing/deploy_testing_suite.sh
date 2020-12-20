@@ -100,5 +100,13 @@ SEVSV0lTRSwgQVJJU0lORyBGUk9NLApPVVQgT0YgT1IgSU4gQ09OTkVDVElPTiBXSVRIIFRIRSBT
 T0ZUV0FSRSBPUiBUSEUgVVNFIE9SIE9USEVSIERFQUxJTkdTIElOIFRIRQpTT0ZUV0FSRS4K
 EOF
 
+base64 -di test_raspi_camera.sh > test_raspi_camera.sh <<'EOF'
+IyEvYmluL2Jhc2gKCnJhc3Bpc3RpbGwgLW8gdGVzdENhcHR1cmUuanBnIC1zdCAtdCAxMDAwCg==
+EOF
+
+#### making python and shell scripts executable ####
+chmod +x *.py *.sh
+
+#### remind the user to enable I2C and to reboot ####
 echo
 echo Please enable I2C by running raspi-config and then reboot.
