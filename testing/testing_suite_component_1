@@ -1,0 +1,27 @@
+echo '#### NOTICE ###########################################################'
+echo This script will install the necessary software to test the wiring of
+echo the I2C sensors. Test scripts will be written to the
+echo \'/home/pi/testing\' directory. Please note that this testing suite makes
+echo use of free licensed open source software. Please see the licensing
+echo files '(*_license.txt)' for details.
+echo '#######################################################################'
+sleep 25
+echo
+
+echo '#### Updating your installation #######################################'
+echo
+sudo apt update -y && sudo apt upgrade -y
+echo
+
+echo '#### Installing software for I2C ######################################'
+echo
+sudo apt install -y python3-pip i2c-tools
+echo
+
+sudo pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
+echo
+
+echo '#### Writing the test scripts and license file ########################'
+echo
+mkdir /home/pi/testing
+cd /home/pi/testing
