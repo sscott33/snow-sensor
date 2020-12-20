@@ -6,9 +6,9 @@ echo the I2C sensors. Test scripts will be written to the
 echo \'/home/pi/testing\' directory. Please note that this testing suite makes
 echo use of free licensed open source software. Please see the licensing
 echo file \'amg88_and_sht31_prog_license.txt\' for details. This license
-echo pertains to both \'test_amg33xx.py\' and \'test_sht31.py\'.
+echo pertains to both \'test_amg88xx.py\' and \'test_sht31.py\'.
 echo '#######################################################################'
-sleep 20
+sleep 25
 echo
 
 echo '#### Updating your installation #######################################'
@@ -53,7 +53,7 @@ ZToKICAgIGZvciByb3cgaW4gYW1nLnBpeGVsczoKICAgICAgICBwcmludChbJ3swOi4xZn0nLmZv
 cm1hdCh0ZW1wKSBmb3IgdGVtcCBpbiByb3ddKQogICAgICAgIHByaW50KCIiKQoKICAgIHByaW50
 KCJcbiIpCiAgICB0aW1lLnNsZWVwKDEpCg==
 EOF
-chmod +x test_amg33xx.py
+chmod +x test_amg88xx.py
 
 base64 -di > amg88_and_sht31_prog_license.txt <<'EOF'
 VGhlIE1JVCBMaWNlbnNlIChNSVQpCgpDb3B5cmlnaHQgKGMpIDIwMTcgSmVycnkgTmVlZGVsbAoK
