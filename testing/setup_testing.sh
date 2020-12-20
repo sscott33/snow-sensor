@@ -9,6 +9,7 @@ echo file \'amg88_and_sht31_prog_license.txt\' for details. This license
 echo pertains to both \'test_amg33xx.py\' and \'test_sht31.py\'.
 echo '#######################################################################'
 sleep 20
+echo
 
 echo '#### Updating your installation #######################################'
 echo
