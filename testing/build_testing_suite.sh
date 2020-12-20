@@ -1,3 +1,5 @@
+# Copyright 2020 Samuel Odell Scott
+
 #!/bin/bash
 
 deploy_file=deploy_testing_suite.sh
