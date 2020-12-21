@@ -1,10 +1,12 @@
-echo '#### NOTICE ###########################################################'
-echo This script will install the necessary software to test the wiring of
-echo the I2C sensors. Test scripts will be written to the
-echo \'/home/pi/testing\' directory. Please note that this testing suite makes
-echo use of free licensed open source software. Please see the licensing
-echo files '(*_license.txt)' for details.
-echo '#######################################################################'
+cat <<'EOF'
+#### NOTICE ###########################################################
+This script will install the necessary software to test the wiring of
+the I2C sensors. Test scripts will be written to the /home/pi/testing
+directory. Please note that this testing suite makes use of free
+licensed open source software. Please see the licensing files
+(*_license.txt) for details.
+#######################################################################
+EOF
 sleep 25
 echo
 
