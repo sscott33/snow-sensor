@@ -3,7 +3,7 @@
 #!/bin/bash
 
 deploy_file=deploy_testing_suite.sh
-deployment_file_list=deployment_files.txt
+deployment_source=deployment_files.txt
 
 # add initial components
 echo '#!/bin/bash' > $deploy_file
@@ -24,7 +24,7 @@ do
         base64 $line
         echo EOF
     fi
-done < $deployment_file_list >> $deploy_file
+done < $deployment_source >> $deploy_file
 
 for ps in testing_suite_ps_*; do
     echo
