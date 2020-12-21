@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#### testing_suite_component_1 ####
+#### precomponent_1 ####
 cat <<'EOF'
 #### NOTICE ###########################################################
 This script will install the necessary software to test the wiring of
@@ -106,7 +106,7 @@ base64 -di test_raspi_camera.sh > test_raspi_camera.sh <<'EOF'
 IyEvYmluL2Jhc2gKCnJhc3Bpc3RpbGwgLW8gdGVzdENhcHR1cmUuanBnIC1zdCAtdCAxMDAwCg==
 EOF
 
-#### testing_suite_ps_1 ####
+#### postcomponent_1 ####
 #### making python and shell scripts executable ####
 chmod +x *.py *.sh
 
