@@ -1,0 +1,6 @@
+#### making python and shell scripts executable ####
+chmod +x *.py *.sh
+
+#### remind the user to enable I2C and to reboot ####
+echo
+echo Please enable I2C by running raspi-config and then reboot.

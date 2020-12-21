@@ -106,6 +106,7 @@ base64 -di test_raspi_camera.sh > test_raspi_camera.sh <<'EOF'
 IyEvYmluL2Jhc2gKCnJhc3Bpc3RpbGwgLW8gdGVzdENhcHR1cmUuanBnIC1zdCAtdCAxMDAwCg==
 EOF
 
+#### testing_suite_ps_1 ####
 #### making python and shell scripts executable ####
 chmod +x *.py *.sh
 
