@@ -23,6 +23,10 @@ echo
 sudo pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
 echo
 
+echo '#### Use Python 3 by default ##########################################'
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 100
+echo
+
 echo '#### Writing the test scripts and license file ########################'
 echo
 mkdir /home/pi/testing
