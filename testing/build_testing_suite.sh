@@ -23,7 +23,7 @@ while IFS="" read -r line
 do
     if [ -n "$line" ]; then
         echo
-        echo "base64 -di $line > $line <<'EOF'"
+        echo "base64 -di > $line <<'EOF'"
         base64 $line
         echo EOF
     fi

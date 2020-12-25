@@ -37,7 +37,7 @@ cd /home/pi/testing
 
 #### testing scripts and licenses ####
 
-base64 -di test_amg88xx.py > test_amg88xx.py <<'EOF'
+base64 -di > test_amg88xx.py <<'EOF'
 IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoKaW1wb3J0IHRpbWUKaW1wb3J0IGJ1c2lvCmltcG9ydCBi
 b2FyZAppbXBvcnQgYWRhZnJ1aXRfYW1nODh4eAoKaTJjID0gYnVzaW8uSTJDKGJvYXJkLlNDTCwg
 Ym9hcmQuU0RBKQphbWcgPSBhZGFmcnVpdF9hbWc4OHh4LkFNRzg4WFgoaTJjKQoKd2hpbGUgVHJ1
@@ -46,7 +46,7 @@ cm1hdCh0ZW1wKSBmb3IgdGVtcCBpbiByb3ddKQogICAgICAgIHByaW50KCIiKQoKICAgIHByaW50
 KCJcbiIpCg==
 EOF
 
-base64 -di test_amg88xx_license.txt > test_amg88xx_license.txt <<'EOF'
+base64 -di > test_amg88xx_license.txt <<'EOF'
 VGhlIE1JVCBMaWNlbnNlIChNSVQpCgpDb3B5cmlnaHQgKGMpIDIwMTcgRGVhbiBNaWxsZXIsIHdy
 aXR0ZW4gZm9yIEFkYWZydWl0IEluZHVzdHJpZXMKClBlcm1pc3Npb24gaXMgaGVyZWJ5IGdyYW50
 ZWQsIGZyZWUgb2YgY2hhcmdlLCB0byBhbnkgcGVyc29uIG9idGFpbmluZyBhIGNvcHkKb2YgdGhp
@@ -69,7 +69,7 @@ IE9GIE9SIElOIENPTk5FQ1RJT04gV0lUSCBUSEUgU09GVFdBUkUgT1IgVEhFIFVTRSBPUiBPVEhF
 UiBERUFMSU5HUyBJTiBUSEUKU09GVFdBUkUu
 EOF
 
-base64 -di test_sht31.py > test_sht31.py <<'EOF'
+base64 -di > test_sht31.py <<'EOF'
 IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoKaW1wb3J0IHRpbWUKaW1wb3J0IGJvYXJkCmltcG9ydCBi
 dXNpbwppbXBvcnQgYWRhZnJ1aXRfc2h0MzFkCgojIENyZWF0ZSBsaWJyYXJ5IG9iamVjdCB1c2lu
 ZyBvdXIgQnVzIEkyQyBwb3J0CmkyYyA9IGJ1c2lvLkkyQyhib2FyZC5TQ0wsIGJvYXJkLlNEQSkK
@@ -84,7 +84,7 @@ KQogICAgICAgIHRpbWUuc2xlZXAoMSkKICAgICAgICBzZW5zb3IuaGVhdGVyID0gRmFsc2UKICAg
 ICAgICBwcmludCgiU2Vuc29yIEhlYXRlciBzdGF0dXMgPSIsIHNlbnNvci5oZWF0ZXIpCg==
 EOF
 
-base64 -di test_sht31_license.txt > test_sht31_license.txt <<'EOF'
+base64 -di > test_sht31_license.txt <<'EOF'
 VGhlIE1JVCBMaWNlbnNlIChNSVQpCgpDb3B5cmlnaHQgKGMpIDIwMTcgSmVycnkgTmVlZGVsbAoK
 UGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJz
 b24gb2J0YWluaW5nIGEgY29weQpvZiB0aGlzIHNvZnR3YXJlIGFuZCBhc3NvY2lhdGVkIGRvY3Vt
@@ -106,7 +106,7 @@ SEVSV0lTRSwgQVJJU0lORyBGUk9NLApPVVQgT0YgT1IgSU4gQ09OTkVDVElPTiBXSVRIIFRIRSBT
 T0ZUV0FSRSBPUiBUSEUgVVNFIE9SIE9USEVSIERFQUxJTkdTIElOIFRIRQpTT0ZUV0FSRS4K
 EOF
 
-base64 -di test_raspi_camera.sh > test_raspi_camera.sh <<'EOF'
+base64 -di > test_raspi_camera.sh <<'EOF'
 IyEvYmluL2Jhc2gKCnJhc3Bpc3RpbGwgLW8gdGVzdENhcHR1cmUuanBnIC1zdCAtdCAxMDAwCg==
 EOF
 
