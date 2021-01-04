@@ -1,0 +1,5 @@
+https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx.py
+https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx_license.txt
+https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31.py
+https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31_license.txt
+https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_raspi_camera.sh
