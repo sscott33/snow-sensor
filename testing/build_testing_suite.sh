@@ -38,7 +38,7 @@ if [ -f "$deployment_wgets" ]; then
     do
         if [ -n "$line" ]; then
             echo
-            echo "wget $line"
+            echo "curl -OsS $line"
         fi
     done < $deployment_wgets >> $deploy_file
 fi

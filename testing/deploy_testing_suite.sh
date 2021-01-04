@@ -18,7 +18,7 @@ echo
 sudo apt update -y
 echo
 
-echo '#### Installing software for I2C ######################################'
+echo '#### Installing necessary software ####################################'
 echo
 sudo apt install -y python3-pip i2c-tools python3-numpy python3-pillow python3-picamera python3-rpi.gpio
 echo
@@ -30,22 +30,22 @@ echo
 #sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 100
 #echo
 
-echo '#### Writing the test scripts and license file ########################'
+echo '#### Writing the test scripts and license files #######################'
 echo
 mkdir /home/pi/testing
 cd /home/pi/testing
 
 #### testing scripts and licenses ####
 
-wget https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx.py
+curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx.py
 
-wget https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx_license.txt
+curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx_license.txt
 
-wget https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31.py
+curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31.py
 
-wget https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31_license.txt
+curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31_license.txt
 
-wget https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_raspi_camera.sh
+curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_raspi_camera.sh
 
 #### postcomponent_1 ####
 #### making python and shell scripts executable ####

@@ -15,7 +15,7 @@ echo
 sudo apt update -y
 echo
 
-echo '#### Installing software for I2C ######################################'
+echo '#### Installing necessary software ####################################'
 echo
 sudo apt install -y python3-pip i2c-tools python3-numpy python3-pillow python3-picamera python3-rpi.gpio
 echo
@@ -27,7 +27,7 @@ echo
 #sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 100
 #echo
 
-echo '#### Writing the test scripts and license file ########################'
+echo '#### Writing the test scripts and license files #######################'
 echo
 mkdir /home/pi/testing
 cd /home/pi/testing
