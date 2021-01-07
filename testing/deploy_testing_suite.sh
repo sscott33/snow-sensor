@@ -32,7 +32,7 @@ echo
 
 echo '#### Writing the test scripts and license files #######################'
 echo
-mkdir /home/pi/testing
+[ -f /home/pi/testing ] && rm -rf /home/pi/testing/* || mkdir /home/pi/testing
 cd /home/pi/testing
 
 #### testing scripts and licenses ####
