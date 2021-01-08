@@ -28,7 +28,7 @@ echo
 
 echo '#### Writing the test scripts and license files #######################'
 echo
-[ -f /home/pi/testing ] && rm -rf /home/pi/testing/* || mkdir /home/pi/testing
+[ -d /home/pi/testing ] && rm -rf /home/pi/testing/* || mkdir /home/pi/testing
 cd /home/pi/testing
 
 #### testing scripts and licenses ####
