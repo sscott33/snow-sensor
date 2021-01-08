@@ -1,57 +1,100 @@
 #!/bin/bash
 
+trap 'exit 0' INT
+
 #### precomponent_1 ####
 cat <<'EOF'
-#### NOTICE ###########################################################
-This script will install the necessary software to test the wiring of
-the I2C sensors and a pi-compatible camera. Test scripts will be
-written to the /home/pi/testing directory. Please note that this
-testing suite makes use of free licensed open source software. Please
-see the licensing files (*_license.txt) for details.
-#######################################################################
+#### NOTICE ###################################################################
+Note that this script should have been invoked with 'sudo'. If you have not
+done this, then please press ^C and rerun this script with elevated
+privleges. This script will install the necessary software to test the wiring
+of the I2C sensors and a pi-compatible camera. Test scripts will be written to
+the /home/pi/testing directory. Please note that this testing suite makes use
+of free licensed open source software. Please see the licensing files
+(*_license.txt) for details.
+###############################################################################
 EOF
-sleep 25
 echo
+read -p "Press ENTER when ready."
 
-echo '#### Updating your installation #######################################'
-echo
-apt update -y && apt upgrade -y
-echo
+# message for prompt
+IFS= read -r -d '' prompt << 'EOF'
+What would you like the installer to do? (you have 30 sec to choose)
 
-echo '#### Installing necessary software ####################################'
-echo
-apt install -y python3-pip i2c-tools python3-numpy python3-pillow python3-picamera python3-rpi.gpio
-echo
+    1. Do full update of system and install testing suite.
+    2. Install testing suite.
+    3. Full update of system.
+    4. Exit.
 
-pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
-echo
+(default = 1)
+EOF
 
-echo '#### Writing the test scripts and license files #######################'
-echo
-[ -d /home/pi/testing ] && rm -rf /home/pi/testing/* || mkdir /home/pi/testing
-cd /home/pi/testing
+function DoPrompt {
 
-#### testing scripts and licenses ####
+    clear
 
-curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx.py
+    IFS= read -r -t 30 -p "$prompt" answer || FullInstall
 
-curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx_license.txt
+    case $answer in
+        1) FullInstall;;
+        2) InstallTestingSuite;;
+        3) Update;;
+        4) exit 0;;
+        *) DoPrompt;;
+    esac
+}
 
-curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31.py
+function FullInstall {
+    Update
+    InstallTestingSuite
+    exit 0
+}
 
-curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31_license.txt
+function Update() {
+    echo '#### Updating your installation #######################################'
+    echo
+    apt update -y && apt upgrade -y
+    echo
+}
 
-curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_raspi_camera.sh
+function InstallTestingSuite {
+    echo '#### Installing necessary software ####################################'
+    echo
+    apt install -y python3-pip i2c-tools python3-numpy python3-pillow python3-picamera python3-rpi.gpio
+    echo
 
-curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_i2c_connections.sh
+    pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
+    echo
 
-#### postcomponent_1 ####
-#### making python and shell scripts executable ####
-chmod +x *.py *.sh
+    echo '#### Writing the test scripts and license files #######################'
+    echo
+    [ -d /home/pi/testing ] && rm -rf /home/pi/testing/* || mkdir /home/pi/testing
+    cd /home/pi/testing
 
-#### give ownership of new files to the pi user ####
-chown -R pi:pi /home/pi/testing
+    #### testing scripts and licenses ####
 
-#### remind the user to enable I2C and to reboot ####
-echo
-echo Please enable I2C by running raspi-config and then reboot.
+    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx.py
+
+    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx_license.txt
+
+    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31.py
+
+    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31_license.txt
+
+    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_raspi_camera.sh
+
+    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_i2c_connections.sh
+
+    #### postcomponent_1 ####
+    #### making python and shell scripts executable ####
+    chmod +x *.py *.sh
+
+    #### give ownership of new files to the pi user ####
+    chown -R pi:pi /home/pi/testing
+
+    #### remind the user to enable I2C and to reboot ####
+    echo
+    echo Please enable I2C by running raspi-config and then reboot.
+}
+
+DoPrompt
