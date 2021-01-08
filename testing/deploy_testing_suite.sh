@@ -13,9 +13,9 @@ EOF
 sleep 25
 echo
 
-echo '#### Updating your installation sources ###############################'
+echo '#### Updating your installation #######################################'
 echo
-apt update -y
+apt update -y && apt upgrade -y
 echo
 
 echo '#### Installing necessary software ####################################'
@@ -25,10 +25,6 @@ echo
 
 pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
 echo
-
-#echo '#### Use Python 3 by default ##########################################'
-#update-alternatives --install /usr/bin/python python /usr/bin/python3 100
-#echo
 
 echo '#### Writing the test scripts and license files #######################'
 echo
