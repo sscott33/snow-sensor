@@ -1,6 +1,9 @@
 #### making python and shell scripts executable ####
 chmod +x *.py *.sh
 
+#### give ownership of new files to the pi user ####
+chown -R pi:pi /home/pi/testing
+
 #### remind the user to enable I2C and to reboot ####
 echo
 echo Please enable I2C by running raspi-config and then reboot.

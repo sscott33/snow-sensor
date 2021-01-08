@@ -15,19 +15,19 @@ echo
 
 echo '#### Updating your installation sources ###############################'
 echo
-sudo apt update -y
+apt update -y
 echo
 
 echo '#### Installing necessary software ####################################'
 echo
-sudo apt install -y python3-pip i2c-tools python3-numpy python3-pillow python3-picamera python3-rpi.gpio
+apt install -y python3-pip i2c-tools python3-numpy python3-pillow python3-picamera python3-rpi.gpio
 echo
 
-sudo pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
+pip3 install adafruit-circuitpython-amg88xx adafruit-circuitpython-sht31d
 echo
 
 #echo '#### Use Python 3 by default ##########################################'
-#sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 100
+#update-alternatives --install /usr/bin/python python /usr/bin/python3 100
 #echo
 
 echo '#### Writing the test scripts and license files #######################'
@@ -47,9 +47,14 @@ curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/
 
 curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_raspi_camera.sh
 
+curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_i2c_connections.sh
+
 #### postcomponent_1 ####
 #### making python and shell scripts executable ####
 chmod +x *.py *.sh
+
+#### give ownership of new files to the pi user ####
+chown -R pi:pi /home/pi/testing
 
 #### remind the user to enable I2C and to reboot ####
 echo
