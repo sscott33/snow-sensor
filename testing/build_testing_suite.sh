@@ -1,6 +1,6 @@
-# Copyright 2020 Samuel Odell Scott
-
 #!/bin/bash
+
+# Copyright 2020-2021 Samuel Odell Scott
 
 deploy_file=deploy_testing_suite.sh
 deployment_source=deployment_files.txt
