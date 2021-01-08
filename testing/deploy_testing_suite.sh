@@ -1,8 +1,9 @@
 #!/bin/bash
 
+# Copyright 2021 Samuel Odell Scott
+
 trap 'exit 0' INT
 
-#### precomponent_1 ####
 cat <<'EOF'
 #### NOTICE ###################################################################
 Note that this script should have been invoked with 'sudo'. If you have not
@@ -85,7 +86,6 @@ function InstallTestingSuite {
 
     curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_i2c_connections.sh
 
-    #### postcomponent_1 ####
     #### making python and shell scripts executable ####
     chmod +x *.py *.sh
 
