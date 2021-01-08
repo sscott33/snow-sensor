@@ -17,4 +17,6 @@ curl -sS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/d
 ```
 Note that the testing suite installer is intended to be run on a fresh install
 of Raspberry Pi OS. Similar deployment files may be created in the future for
-updating the software of the snow sensors.
+updating the software of the snow sensors. Also note that one should not run a
+"curl | bash" style command without first looking at the contents of the file
+to be executed.
