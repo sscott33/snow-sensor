@@ -18,8 +18,8 @@ done >> $deploy_file
 
 # files to extract from the deployment script
 # add the testing scripts and licenses to be written to testing directory
-    echo >> $deploy_file
-    echo '####' testing scripts and licenses '####' >> $deploy_file
+echo >> $deploy_file
+echo '####' testing scripts and licenses '####' >> $deploy_file
 
 if [ -f "$deployment_source" ]; then # deployment files to wrap into installer
     while IFS="" read -r line
