@@ -94,7 +94,10 @@ function InstallTestingSuite {
 
     #### remind the user to enable I2C and to reboot ####
     echo
-    echo Please enable I2C by running raspi-config and then reboot.
+    echo '#### Enabling I2C #####################################################'
+    sed -i '/#dtparam=i2c_arm=on/s/#//1' /boot/config.txt
+    echo
+    echo Please reboot your Pi for all changes to take effect.
 }
 
 DoPrompt
