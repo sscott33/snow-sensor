@@ -95,7 +95,8 @@ function InstallTestingSuite {
     #### remind the user to enable I2C and to reboot ####
     echo
     echo '#### Enabling I2C #####################################################'
-    sed -i '/#dtparam=i2c_arm=on/s/#//1' /boot/config.txt
+    sed -i '/dtparam=i2c_arm=off/s/off/on/1' /boot/config.txt
+    sed -i '/#dtparam=i2c_arm/s/#//1' /boot/config.txt
     echo
     echo Please reboot your Pi for all changes to take effect.
 }
