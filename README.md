@@ -11,7 +11,8 @@ source (FLOSS). Each piece of FLOSS has its own licensing file, so see those
 for more details.
 
 # Deployment of the Testing Suite
-To install the testing suite, please run the one-liner below:
+To install the testing suite, please run the one-liner below on your Pi Zero or
+Pi Zero W with an internet connection:
 ```
 curl -sS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/deploy_testing_suite.sh | sudo bash
 ```
