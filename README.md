@@ -2,9 +2,10 @@
 This repo is intended to contain all of the code for the snow sensor senior
 design project. The 'testing' directory primarily contains software to test
 sensor connections and functionality. It also contains some initial setup
-automation. The file 'testing/deploy_testing_suite.sh' is intended to contain
-all the software and is to be run on a Pi Zero with an internet connection. It
-will prepare the Pi for initial testing of the sensors and their wiring.
+automation. The file 'testing/deploy_testing_suite.sh' is designed to setup and
+install all the software needed for testing and is designed to be run on a Pi
+Zero or Zero W with an internet connection. If run with the default options, it
+will fully prepare the Pi for initial testing of the sensors and their wiring.
 
 Please note that this repo contains some software that is free licensed open
 source (FLOSS). Each piece of FLOSS has its own licensing file, so see those
