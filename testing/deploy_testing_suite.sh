@@ -54,7 +54,7 @@ function FullInstall {
 function Update() {
     echo '#### Updating your installation #######################################'
     echo
-    apt update -y && apt upgrade -y
+    apt update && apt -y upgrade
     echo
 }
 
