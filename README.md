@@ -21,5 +21,5 @@ sudo ./deploy_testing_suite.sh
 Note that the testing suite installer is intended to be run on a fresh install
 of Raspberry Pi OS. Similar deployment files may be created in the future for
 updating the software of the snow sensors. Also note that one should not run a
-"curl | bash" style command without first looking at the contents of the file
-to be executed unless you explicitly trust the source.
+bash script without first looking at the contents of the script. Only run
+scripts without reading them if you explicitly trust the source.
