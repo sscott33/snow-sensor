@@ -16,7 +16,7 @@ Zero or Pi Zero W with an internet connection:
 ```
 curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/deploy_testing_suite.sh
 chmod +x deploy_testing_suite.sh
-./deploy_testing_suite.sh
+sudo ./deploy_testing_suite.sh
 ```
 Note that the testing suite installer is intended to be run on a fresh install
 of Raspberry Pi OS. Similar deployment files may be created in the future for
