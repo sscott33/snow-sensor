@@ -21,5 +21,5 @@ Error() {
 i2cAddrList=$(/usr/sbin/i2cdetect -y 1)
 
 # report which of the devices of interest are detected
-grep -q $irSensor <<< $i2cAddrList && echo The AMG8833 is connected. || echo The AMG8833 was not detected.
-grep -q $thSensor <<< $i2cAddrList && echo The SHT31 is connected. || echo The SHT31 was not detected.
+grep -q $irSensor <<< $i2cAddrList && echo Detected the AMG8833 || echo Did not detect the AMG8833
+grep -q $thSensor <<< $i2cAddrList && echo Detected the SHT31 || echo Did not detect the SHT31
