@@ -20,9 +20,6 @@ Error() {
 # get the list of I2C devices connected to the Pi
 i2cAddrList=$(/usr/sbin/i2cdetect -y 1)
 
-# tell the user to check the wiring
-wiringErr="Please check your wiring."
-
 # report which of the devices of interest are detected
-grep -q $irSensor <<< $i2cAddrList && echo The AMG8833 is connected. || echo The AMG8833 has not been detected. $wiringErr
-grep -q $thSensor <<< $i2cAddrList && echo The SHT31 is connected. || echo The SHT31 has not been detected. $wiringErr
+grep -q $irSensor <<< $i2cAddrList && echo The AMG8833 is connected. || echo The AMG8833 was not detected.
+grep -q $thSensor <<< $i2cAddrList && echo The SHT31 is connected. || echo The SHT31 was not detected.
