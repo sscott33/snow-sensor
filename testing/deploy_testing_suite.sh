@@ -2,17 +2,20 @@
 
 # Copyright 2021 Samuel Odell Scott
 
+if [ "$(id -u)" != "0" ]; then
+    echo "You must use sudo to run this script" >&2
+    exit 1
+fi
+
 trap 'exit 0' INT
 
 cat <<'EOF'
 #### NOTICE ###################################################################
-Note that this script should have been invoked with 'sudo'. If you have not
-done this, then please press ^C and rerun this script with elevated
-privleges. This script will install the necessary software to test the wiring
-of the I2C sensors and a pi-compatible camera. Test scripts will be written to
-the /home/pi/testing directory. Please note that this testing suite makes use
-of free licensed open source software. Please see the licensing files
-(*_license.txt) for details.
+This script will install the necessary software to test the wiring of the I2C
+sensors and a pi-compatible camera. Test scripts will be written to the
+/home/pi/testing directory. Please note that some files in this testing suite
+are free licensed open source software. Please see the respective licensing
+files (*_license.txt) for details.
 ###############################################################################
 EOF
 echo
