@@ -76,18 +76,13 @@ function InstallTestingSuite {
     cd /home/pi/testing
 
     #### testing scripts and licenses ####
-
-    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx.py
-
-    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_amg88xx_license.txt
-
-    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31.py
-
-    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_sht31_license.txt
-
-    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_raspi_camera.sh
-
-    curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/test_i2c_connections.sh
+    curl -sS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/testing_files | \
+    while IFS="" read -r line
+    do
+        if [ -n "$line" ]; then
+            curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/$line
+        fi
+    done
 
     #### making python and shell scripts executable ####
     chmod +x *.py *.sh
