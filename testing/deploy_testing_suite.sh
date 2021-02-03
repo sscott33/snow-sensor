@@ -76,12 +76,11 @@ function InstallTestingSuite {
     cd /home/pi/testing
 
     #### testing scripts and licenses ####
-    curl -sS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/testing_files | \
+    testDirURL="https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing"
+    curl -sS $testDirURL/testing_files | \
     while IFS="" read -r line
     do
-        if [ -n "$line" ]; then
-            curl -OsS https://raw.githubusercontent.com/sscott33/snow-sensor/master/testing/$line
-        fi
+        [ -n "$line" ] && curl -OsS $testDirURL/$line
     done
 
     #### making python and shell scripts executable ####
@@ -90,11 +89,13 @@ function InstallTestingSuite {
     #### give ownership of new files to the pi user ####
     chown -R pi:pi /home/pi/testing
 
-    #### remind the user to enable I2C and to reboot ####
+    #### enable I2C ####
     echo
     echo '#### Enabling I2C #####################################################'
     sed -i '/dtparam=i2c_arm=off/s/off/on/1' /boot/config.txt
     sed -i '/#dtparam=i2c_arm/s/#//1' /boot/config.txt
+
+    #### remind the user to reboot ####
     echo
     echo Please reboot your Pi for all changes to take effect.
 }
