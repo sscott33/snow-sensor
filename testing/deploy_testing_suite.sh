@@ -3,8 +3,8 @@
 # Copyright 2021 Samuel Odell Scott
 
 if [ "$(id -u)" != "0" ]; then
-    echo "You must use sudo to run this script" >&2
-    exit 1
+    sudo $0
+    exit 0
 fi
 
 trap 'exit 0' INT
